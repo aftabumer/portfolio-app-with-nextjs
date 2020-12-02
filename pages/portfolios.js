@@ -1,7 +1,8 @@
 import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import axios from "axios";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "../routes";
 
 const Portfolios = ({ posts }) => {
   return (
@@ -10,10 +11,7 @@ const Portfolios = ({ posts }) => {
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
-            <Link
-              as={`/portfolios/${post.id}`}
-              href={`/portfolios/[portfolio_id]`}
-            >
+            <Link route={`/portfolios/${post.id}`}>
               <a>{post.title}</a>
             </Link>
           </li>
